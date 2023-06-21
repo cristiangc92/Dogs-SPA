@@ -10,11 +10,13 @@ const getTemperaments = async () => {
     const temperamentApi = await temperamentUrl.data
       .map((d) => (d.temperament ? d.temperament : "Not found"))
       .map((t) => t?.split(", "));
-    temperamentApi.forEach((t) => {
-      Temperament.findOrCreate({
-        name: t,
-      });
-    });
+    temperamentApi.forEach((t) =>
+      t.forEach((temperament) =>
+        Temperament.findOrCreate({
+          where: { name: temperament },
+        })
+      )
+    );
   } catch (error) {
     console.log("Error en getTemperaments: ", error);
   }

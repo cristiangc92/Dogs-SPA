@@ -12,9 +12,12 @@ const getApiInfo = async () => {
         id: d.id,
         name: d.name,
         image: d.image.url,
-        height: d.height,
-        weight: d.weight,
-        life_span: d.life_span,
+        minHeight: d.height.metric.slice(0, 2).trim(),
+        maxHeight: d.height.metric.slice(4).trim(),
+        minWeight: d.weight.metric.slice(0, 2).trim(),
+        maxWeight: d.weight.metric.slice(4).trim(),
+        minLife_span: d.life_span.slice(0, 2).trim(),
+        maxLife_span: d.life_span.slice(4, -6).trim(),
         temperament: d.temperament,
       };
     });
@@ -48,4 +51,4 @@ const getAllDogs = async () => {
   return infoTotal;
 };
 
-module.exports = getAllDogs;
+module.exports = { getApiInfo, getAllDogs };
