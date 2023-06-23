@@ -21,6 +21,26 @@ const getApiInfo = async () => {
         temperament: d.temperament,
       };
     });
+    dogsApi.forEach((e) => {
+      if (e.minHeight === "") {
+        e.minHeight = e.maxHeight;
+      }
+      if (e.maxHeight === "") {
+        e.maxHeight = e.minHeight;
+      }
+      if (e.minWeight === "") {
+        e.minWeight = e.maxWeight;
+      }
+      if (e.maxWeight === "") {
+        e.maxWeight = e.minWeight;
+      }
+      if (e.minLife_span === "") {
+        e.minLife_span = e.maxLife_span;
+      }
+      if (e.maxLife_span === "") {
+        e.maxLife_span = e.minLife_span;
+      }
+    });
     return dogsApi;
   } catch (error) {
     console.log("Error en getApiInfo: ", error);
