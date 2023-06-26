@@ -1,15 +1,48 @@
-import React, { useEffect } from "react";
-import { getDogs, getTemperaments } from "../actions";
+import React, { useEffect, useState } from "react";
+import {
+  getTemperaments,
+  filterDogsByTemperaments,
+  filterCreated,
+  orderByName,
+  orderByWeight,
+} from "../actions";
 import { useSelector, useDispatch } from "react-redux";
 import "./Navbar.css";
+import SearchBar from "./SearchBar";
 
 export default function Navbar() {
   const dispatch = useDispatch();
-  const allTemperaments = useSelector((state) => state.temperaments);
+  const allTemperaments = useSelector((state) => state.temperaments).sort(
+    function (a, b) {
+      if (a < b) return -1;
+      else return 1;
+    }
+  );
+  const [orden, setOrden] = useState("");
 
   useEffect(() => {
     dispatch(getTemperaments());
   }, []);
+
+  function handleFilterTemperaments(e) {
+    dispatch(filterDogsByTemperaments(e.target.value));
+  }
+
+  function handleFilterCreated(e) {
+    dispatch(filterCreated(e.target.value));
+  }
+
+  function handleSort(e) {
+    e.preventDefault();
+    dispatch(orderByName(e.target.value));
+    setOrden(e.target.value);
+  }
+
+  function handleSort2(e) {
+    e.preventDefault();
+    dispatch(orderByWeight(e.target.value));
+    setOrden(e.target.value);
+  }
 
   return (
     <nav className="navbar navbar-expand-lg bg-primary position-fixed z-1">
@@ -33,6 +66,7 @@ export default function Navbar() {
                 className="form-select"
                 aria-label="Default select example"
                 defaultValue="Temperaments"
+                onChange={(e) => handleFilterTemperaments(e)}
               >
                 <option disabled>Temperaments</option>
                 <option value="All">All</option>
@@ -51,6 +85,7 @@ export default function Navbar() {
                 className="form-select"
                 aria-label="Default select example"
                 defaultValue="Origin"
+                onChange={(e) => handleFilterCreated(e)}
               >
                 <option disabled>Origin</option>
                 <option value="All">All</option>
@@ -63,6 +98,7 @@ export default function Navbar() {
                 className="form-select"
                 aria-label="Default select example"
                 defaultValue="Order"
+                onChange={(e) => handleSort(e)}
               >
                 <option disabled>Order</option>
                 <option value="asc">A to Z</option>
@@ -73,24 +109,16 @@ export default function Navbar() {
               <select
                 className="form-select"
                 aria-label="Default select example"
+                defaultValue="Weight"
+                onChange={(e) => handleSort2(e)}
               >
-                <option disabled>Weigh</option>
-                <option value="2">High</option>
-                <option value="3">Low</option>
+                <option disabled>Weight</option>
+                <option value="high">High</option>
+                <option value="low">Low</option>
               </select>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-light" type="submit">
-              Search
-            </button>
-          </form>
+          <SearchBar />
         </div>
       </div>
     </nav>
