@@ -1,0 +1,17 @@
+.navbar {
+  width: 99%;
+}
+
+.navbar-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.container-fluid .text-white {
+  text-shadow: 0.2rem 0.2rem 0.1rem black;
+}
+
+.form-select {
+  box-shadow: 0.2rem 0.2rem 0.1rem black;
+}

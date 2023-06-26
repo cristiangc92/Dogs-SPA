@@ -1,0 +1,19 @@
+.fondoHome {
+  background-image: url("../assets/fondoDogs.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.containerNavbar {
+  display: flex;
+}

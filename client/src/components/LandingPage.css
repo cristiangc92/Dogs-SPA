@@ -1,0 +1,61 @@
+.fondoLanding {
+  background-image: url("../assets/fondoDogs.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tituloLanding {
+  margin-left: 12%;
+  margin-right: 2%;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.1rem black;
+}
+
+.btn {
+  box-shadow: 0.2rem 0.2rem 0.1rem black;
+}
+
+@media (max-width: 1024px) {
+  .tituloLanding {
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .fondoLanding {
+    background-position: -12rem;
+    justify-content: start;
+    align-items: center;
+  }
+  .tituloLanding {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .fondoLanding {
+    background-position: -35rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .tituloLanding {
+    margin-left: 0%;
+    margin-bottom: 5%;
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .fondoLanding {
+    background-position: -38rem;
+  }
+  .tituloLanding {
+    font-size: 4rem;
+  }
+}

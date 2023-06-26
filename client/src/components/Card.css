@@ -1,0 +1,26 @@
+.card {
+  height: auto;
+  width: 20rem;
+  margin-bottom: 1.5rem;
+}
+
+.card img {
+  height: 15rem;
+  width: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+}
+
+.card-body ul {
+  border-radius: 1rem;
+}
+
+.card-body h4 {
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+}
