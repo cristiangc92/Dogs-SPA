@@ -9,6 +9,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import "./Navbar.css";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -61,6 +62,13 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav m-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link to={"/dog"}>
+                <button type="button" className="btn btn-outline-light">
+                  Create Breed
+                </button>
+              </Link>
+            </li>
             <li className="nav-item">
               <select
                 className="form-select"
