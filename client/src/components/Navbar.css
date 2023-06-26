@@ -15,3 +15,12 @@
 .form-select {
   box-shadow: 0.2rem 0.2rem 0.1rem black;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
+  .navbar-nav {
+    padding-top: 0.5rem;
+  }
+}

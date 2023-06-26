@@ -14,6 +14,11 @@
   font-size: 5rem;
   color: white;
   text-shadow: 0.2rem 0.2rem 0.1rem black;
+  background-color: #0d6efd;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 .btn {
@@ -33,6 +38,7 @@
     align-items: center;
   }
   .tituloLanding {
+    margin-left: 2%;
     font-size: 4rem;
   }
 }
@@ -57,5 +63,11 @@
   }
   .tituloLanding {
     font-size: 4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .tituloLanding {
+    font-size: 3.5rem;
   }
 }
