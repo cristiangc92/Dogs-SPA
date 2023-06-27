@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-primary position-fixed z-1">
       <div className="container-fluid">
-        <h2 className="text-white fw-bold">Dogs SPA</h2>
+        <h2 className="text-white fw-bold tituloNav">Dogs SPA</h2>
         <button
           className="navbar-toggler"
           type="button"

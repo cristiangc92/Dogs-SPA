@@ -61,16 +61,18 @@ export default function Home() {
           </div>
           <div className="containerCards">
             {currentPokemons.map((dog) => (
-              <Card
-                key={dog.id}
-                image={dog.image}
-                name={dog.name}
-                temperament={dog.temperament}
-                minWeight={dog.minWeight}
-                maxWeight={dog.maxWeight}
-                minLife_span={dog.minLife_span}
-                maxLife_span={dog.maxLife_span}
-              />
+              <Link to={"/home/" + dog.id} key={dog.id} className="link">
+                <Card
+                  key={dog.id}
+                  image={dog.image}
+                  name={dog.name}
+                  temperament={dog.temperament}
+                  minWeight={dog.minWeight}
+                  maxWeight={dog.maxWeight}
+                  minLife_span={dog.minLife_span}
+                  maxLife_span={dog.maxLife_span}
+                />
+              </Link>
             ))}
           </div>
           <div>
