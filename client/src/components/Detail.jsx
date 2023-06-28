@@ -31,14 +31,14 @@ export default function Detail(props) {
             <strong>Temperaments:</strong> {myDog.temperament}
           </h3>
           <h3>
-            <strong>Height:</strong> {myDog.minHeight} - {myDog.maxHeight}
+            <strong>Height:</strong> {myDog.minHeight} - {myDog.maxHeight} cm.
           </h3>
           <h3>
-            <strong>Weight:</strong> {myDog.minWeight} - {myDog.maxWeight}
+            <strong>Weight:</strong> {myDog.minWeight} - {myDog.maxWeight} kg.
           </h3>
           <h3>
             <strong>Life Span:</strong> {myDog.minLife_span} -{" "}
-            {myDog.maxLife_span}
+            {myDog.maxLife_span} years.
           </h3>
           <br />
           <Link to={"/home"}>
