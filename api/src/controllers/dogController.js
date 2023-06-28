@@ -58,7 +58,22 @@ const getDbInfo = async () => {
         },
       },
     });
-    return dogsDb;
+    const mapInfoDb = dogsDb.map((d) => {
+      return {
+        id: d.id,
+        name: d.name,
+        image: d.image,
+        minHeight: d.minHeight,
+        maxHeight: d.maxHeight,
+        minWeight: d.minWeight,
+        maxWeight: d.maxWeight,
+        minLife_span: d.minLife_span,
+        maxLife_span: d.maxLife_span,
+        temperament: d.temperaments.map((t) => t.name).join(", "),
+        createdInDb: d.createdInDb,
+      };
+    });
+    return mapInfoDb;
   } catch (error) {
     console.log("Error en getDbInfo: ", error);
   }

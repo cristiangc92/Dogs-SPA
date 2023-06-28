@@ -16,7 +16,7 @@ export default function Home() {
   const [dogsPerPage, setDogsPerPage] = useState(20);
   const indexOfLastDog = currentPage * dogsPerPage;
   const indexOfFirstDog = indexOfLastDog - dogsPerPage;
-  const currentPokemons = allDogs?.slice(indexOfFirstDog, indexOfLastDog);
+  const currentDogs = allDogs?.slice(indexOfFirstDog, indexOfLastDog);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -60,7 +60,7 @@ export default function Home() {
             />
           </div>
           <div className="containerCards">
-            {currentPokemons.map((dog) => (
+            {currentDogs.map((dog) => (
               <Link to={"/home/" + dog.id} key={dog.id} className="link">
                 <Card
                   key={dog.id}

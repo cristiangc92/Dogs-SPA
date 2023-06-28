@@ -81,3 +81,13 @@ export function vaciarDetail() {
     type: "VACIAR_DETAIL",
   };
 }
+
+export function postDog(payload) {
+  return async function (dispatch) {
+    const json = await axios.post("http://localhost:3001/dog", payload);
+    return dispatch({
+      type: "POST_DOG",
+      payload: json,
+    });
+  };
+}
